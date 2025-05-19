@@ -1,0 +1,100 @@
+.tree-select_container,
+.tree-tree-child-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tree-child-select {
+  padding: 0.6em 1.2em;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.tree-child-select:hover {
+  border-color: #646cff;
+}
+
+.tree-label {
+  display: flex;
+  gap: 1rem;
+}
+
+.tree-checkbox {
+  transform: scale(2);
+}
+
+.tree-child-nodes-margin {
+  margin-left: 2rem;
+  /* margin-left: 0.6em 1.2em; */
+}
+
+.tree-select {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.tree-select:hover {
+  border-color: #646cff;
+}
+
+.tree-children {
+  position: absolute;
+  top: 59;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  border: 1px solid #ccc;
+  border: 1px solid transparent;
+  width: 100%;
+  max-height: 25rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  padding: 1.2em;
+  field-sizing: content;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.btn-select {
+  background-color: #646cff;
+  color: white;
+  padding: 0.6em 1.2em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.btn-select:hover {
+  border-color: #6d74fa;
+}
