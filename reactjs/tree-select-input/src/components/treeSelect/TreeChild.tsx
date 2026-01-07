@@ -1,6 +1,9 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState, useRef, useMemo, useEffect } from 'react';
 import ExpandedButtonChild from './ExpandedButtonChild';
 import { TreeSelectInterface } from '../../interfaces/TreeSelectInterface';
+import TreeSelectService from '../../services/TreeSelectService';
+
+const treeSelectService = new TreeSelectService();
 
 interface TreeChildProps {
   node: TreeSelectInterface;
@@ -9,6 +12,23 @@ interface TreeChildProps {
 
 function TreeChild({ node, onChange }: TreeChildProps) {
   const [showTreeNode, setShowTreeNode] = useState(node.expanded);
+  const checkboxRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+  setShowTreeNode(node.expanded);
+}, [node.expanded]);
+
+
+  const indeterminate = useMemo(
+    () => treeSelectService.getIndeterminate(node),
+    [node],
+  );
+
+    useEffect(() => {
+    if (checkboxRef.current) {
+      checkboxRef.current.indeterminate = indeterminate;
+    }
+  }, [indeterminate]);
 
   const showNode = useCallback(() => {
     if (node.children.length === 0) return;
@@ -40,6 +60,7 @@ function TreeChild({ node, onChange }: TreeChildProps) {
         />
         <label className='tree-label'>
           <input
+            ref={checkboxRef}
             type='checkbox'
             className='tree-checkbox'
             checked={node.checked}

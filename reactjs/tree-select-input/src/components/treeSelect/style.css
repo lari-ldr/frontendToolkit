@@ -2,7 +2,10 @@
 .tree-tree-child-select {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+.tree-select_input {
+  width: 100%;
 }
 
 .tree-child-select {

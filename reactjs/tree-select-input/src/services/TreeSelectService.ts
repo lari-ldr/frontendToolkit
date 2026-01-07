@@ -111,4 +111,15 @@ export default class TreeSelectService {
     return this.markExpanded(tree);
     // return clonedTree;
   }
+
+  public getIndeterminate(node: TreeSelectInterface): boolean {
+  if (!node.children.length) return false;
+
+  const checkedChildren = node.children.filter(
+    (child) => child.checked || this.getIndeterminate(child)
+  );
+
+  return checkedChildren.length > 0 &&
+         checkedChildren.length < node.children.length;
+}
 }

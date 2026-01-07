@@ -63,6 +63,7 @@ export default function TreeSelect() {
       <div className='tree-select'>
         <div className='tree-select_container'>
           <input
+            className='tree-select_input'
             type='text'
             placeholder='Search or select an item'
             onChange={onSearch}
