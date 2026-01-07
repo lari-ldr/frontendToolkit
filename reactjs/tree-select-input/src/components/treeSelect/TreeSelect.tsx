@@ -15,8 +15,6 @@ import ExpandedButtonMother from './ExpandedButtonMother';
             expanded: boolean, // add esse item por causa do item 3
             children: array (repete objeto)
         }
- * 2. Caso a seleção seja parcial mostrar nos checkboxes do pai a seleção parcial e não inteira (indeterminate)
- * 3. Ao usar o search os itens pesquisados devem estar expandidos (no momento a árvore aparece corretamente mas estão todos colapsados)
  * 4. Adicionar animações CSS ao interagir com o tree select
  */
 
